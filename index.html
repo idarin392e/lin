@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iDarin |一个从事电脑图文行业二十余年的技师</title>
+    <meta name="description" content="iDarin - 专业电脑与打印机选购、图文印刷与标签打印服务，提供名片、画册、标签、包装等一站式印刷解决方案">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts: 思源黑体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Splide.js CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/css/splide.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232563EB'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='55' font-weight='bold' fill='white' text-anchor='middle'%3Ei%3C/text%3E%3C/svg%3E">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- ==================== 页面预加载动画 ==================== -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-brand">i</div>
+        </div>
+    </div>
+
+    <!-- ==================== 导航栏 ==================== -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- 左侧桌面菜单 -->
+                <ul class="nav-menu nav-left">
+                    <li><a href="#home" class="nav-link active">首页</a></li>
+                    <li><a href="#services" class="nav-link">业务</a></li>
+                    <li><a href="#experience" class="nav-link">经历</a></li>
+                </ul>
+
+                <!-- 中间品牌标识 + 主题切换 -->
+                <div class="nav-brand">
+                    <a href="#home" class="brand-link">
+                        <span class="brand-icon">i</span>
+                        <span class="brand-text">iDarin</span>
+                    </a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="切换明暗主题">
+                        <span class="theme-toggle-icon dark"><i class="far fa-circle"></i></span>
+                        <span class="theme-toggle-icon light"><i class="fas fa-circle"></i></span>
+                    </button>
+                </div>
+
+                <!-- 右侧桌面菜单 -->
+                <ul class="nav-menu nav-right">
+                    <li><a href="#portfolio" class="nav-link">案例</a></li>
+                    <li><a href="#blog" class="nav-link">博客</a></li>
+                    <li><a href="#contact" class="nav-link">联系</a></li>
+                </ul>
+
+                <!-- 移动端菜单按钮 -->
+                <button class="nav-mobile-toggle" id="nav-toggle" aria-label="打开菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- 移动端菜单 -->
+            <div class="nav-mobile" id="nav-mobile">
+                <a href="#home" class="nav-link">首页</a>
+                <a href="#services" class="nav-link">业务</a>
+                <a href="#experience" class="nav-link">经历</a>
+                <a href="#portfolio" class="nav-link">案例</a>
+                <a href="#blog" class="nav-link">博客</a>
+                <a href="#contact" class="nav-link">联系</a>
+                <button class="theme-toggle theme-toggle-mobile" id="theme-toggle-mobile" aria-label="切换明暗主题">
+                        <span class="theme-toggle-icon dark"><i class="far fa-circle"></i></span>
+                        <span class="theme-toggle-icon light"><i class="fas fa-circle"></i></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== 首屏 Hero ==================== -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-header">
+                <span class="greeting-bubble">你好！</span>
+                <h1 class="hero-name">我是 <span class="text-accent">iDarin</span></h1>
+                <p class="hero-role">一个从事电脑与图文行业资深技师，很高兴与您相识！</p>
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <!-- 左侧信息 -->
+                <div class="col-lg-4 hero-side hero-side-left">
+                    <div class="hero-quote">
+                        <span class="quote-mark">"</span>
+                        <p>多年的行业经验，能轻松为您排除电脑与打印机故障。</p>
+                        <p>在图文行业，我们熟悉凹版，胶版，树脂版，丝网版的制作与印刷。一站式服务</p>
+                    
+                    </div>
+                    <div class="hero-stat">
+                        <h3>500+</h3>
+                        <p>客户</p>
+                    </div>
+                </div>
+
+                <!-- 中间人物 -->
+                <div class="col-lg-4 hero-center">
+                    <div class="hero-portrait">
+                        <div class="hero-photo-bg"></div>
+                        <div class="hero-photo">
+                            <img src="images/hero.png" alt="iDarin" loading="eager">
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#portfolio" class="btn-accent">查看作品 <i class="fas fa-arrow-right"></i></a>
+                            <a href="#contact" class="btn-outline-dark">联系我</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧信息 -->
+                <div class="col-lg-4 hero-side hero-side-right text-lg-end">
+                    <div class="hero-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>20余年</h3>
+                        <p>行业经验</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 业务服务 ==================== -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-5">
+                    <h2 class="section-title text-white">我的 <span class="text-accent">业务服务</span></h2>
+                </div>
+                <div class="col-lg-7">
+                    <p class="section-subtitle">专注于图文印刷与标签打印领域，从设计到成品，提供一站式解决方案。</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- 服务卡片 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-card-head">
+                            <div class="service-icon"><i class="fas fa-print"></i></div>
+                            <h3>图文印刷</h3>
+                        </div>
+                        <div class="service-card-body">
+                            <p>名片、传单、画册、海报、折页等纸质印刷品，从打样到批量出货，严控每一个环节。</p>
+                            <ul class="service-tags">
+                                <li>名片</li>
+                                <li>画册</li>
+                                <li>海报</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服务卡片 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card active">
+                        <div class="service-card-head">
+                            <div class="service-icon"><i class="fas fa-tags"></i></div>
+                            <h3>标签打印</h3>
+                        </div>
+                        <div class="service-card-body">
+                            <p>不干胶标签、条码标签、产品溯源标签、食品标签等，支持多种材质与防水工艺。</p>
+                            <ul class="service-tags">
+                                <li>不干胶</li>
+                                <li>条码</li>
+                                <li>防水</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服务卡片 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-card-head">
+                            <div class="service-icon"><i class="fas fa-palette"></i></div>
+                            <h3>办公设备</h3>
+                        </div>
+                        <div class="service-card-body">
+                            <p>不管是计算机、打印机、软件行业，多年的从业经验，已深得客户信任。</p>
+                            <ul class="service-tags">
+                                <li>选购</li>
+                                <li>维修</li>
+                                <li>安装</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 工作经历 ==================== -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">我的 <span class="text-accent">工作经历</span></h2>
+
+            <div class="timeline">
+                <!-- 经历 1 -->
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <h3>扬中市睿科信息技术有限公司</h3>
+                        <span class="timeline-period">2015年 - 至今</span>
+                    </div>
+                    <div class="timeline-marker active"></div>
+                    <div class="timeline-content">
+                        <h4>负责人</h4>
+                        <p>延续计算机、打印机、复印机、软件行业，增强图文设计制作与印刷业务。</p>
+                        <p>独立承接图文印刷、标签打印、丝网版图文设计与制作，累计服务超过 500 家企业客户，建立起从接单到交付的完整流程。</p>
+                    </div>
+                </div>
+
+                <!-- 经历 2 -->
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <h3>江苏沪运制版有限公司</h3>
+                        <span class="timeline-period">1996年 - 2008年</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>印前技师</h4>
+                        <p>独立完成凹印行业图文的印前图文所有的制作、排版工作，熟练掌握PS、AI、CDR等软件的制作。</p>
+                    </div>
+                </div>
+
+                <!-- 经历 3 -->
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <h3>某电脑公司</h3>
+                        <span class="timeline-period">2008年 - 2015年</span>
+                    </div>
+                    <div class="timeline-marker active"></div>
+                    <div class="timeline-content">
+                        <h4>计算机行业</h4>
+                        <p>独立完成计算机、打印机的选购、安装、维修业务，深得老板和客户的信任。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 为什么选择我 ==================== -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="about-image">
+                            <div class="about-image-bg"></div>
+                            <div class="about-image-frame">
+                                <img src="images/about.png" alt="iDarin 工作场景" loading="lazy">
+                            </div>
+                            <div class="about-badge">
+                                <i class="fas fa-check-circle"></i>
+                                <span>品质保证</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="about-content">
+                            <h2 class="section-title">为什么选择 <span class="text-accent">iDarin</span><br>为你服务？</h2>
+                            <p class="section-desc">多年的行业经验让我深知：不只是把产品交到客户手上，而是非常注重每一次客户给予的信任与支持，才能让我在行业脱颖而出。</p>
+
+                            <div class="about-stats row">
+                                <div class="col-6">
+                                    <div class="about-stat">
+                                        <h3>600+</h3>
+                                        <p>完成项目</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="about-stat">
+                                        <h3>40+</h3>
+                                        <p>覆盖行业</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#contact" class="btn-accent btn-lg">立即咨询</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 作品案例 ==================== -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-md-7">
+                    <h2 class="section-title">看看我的 <span class="text-accent">作品案例</span></h2>
+                </div>
+                <div class="col-md-5 text-md-end">
+                    <a href="#contact" class="btn-accent btn-small">更多案例 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-slider-wrap">
+                <div class="splide" id="portfolio-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <!-- 案例 1 -->
+                            <li class="splide__slide">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-item-bg" style="background-image: url('images/portfolio/case1.png'); background-size: cover; background-position: center;">
+                                        <div class="portfolio-item-overlay">
+                                            <span class="portfolio-category">丝网印刷图文</span>
+                                            <h3>T恤的图文制作</h3>
+                                            <div class="portfolio-tools">
+                                                <span>设计</span>
+                                                <span>制作</span>
+                                                <span>印刷</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 案例 2 -->
+                            <li class="splide__slide">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-item-bg" style="background-image: url('images/portfolio/case2.png'); background-size: cover; background-position: center;">
+                                        <div class="portfolio-item-overlay">
+                                            <span class="portfolio-category">标签印刷</span>
+                                            <h3>不干胶系列标签</h3>
+                                            <div class="portfolio-tools">
+                                                <span>铜版纸不干胶</span>
+                                                <span>防水标签</span>
+                                                <span>亚银PET标签</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 案例 3 -->
+                            <li class="splide__slide">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-item-bg" style="background-image: url('images/portfolio/case3.png'); background-size: cover; background-position: center;">
+                                        <div class="portfolio-item-overlay">
+                                            <span class="portfolio-category">图文印刷</span>
+                                            <h3>画册等彩色印刷</h3>
+                                            <div class="portfolio-tools">
+                                                <span>铜版纸</span>
+                                                <span>白卡纸</span>
+                                                <span>PVC等</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 案例 4 -->
+                            <li class="splide__slide">
+                                <div class="portfolio-item">
+                                    <div class="portfolio-item-bg" style="background-image: url('images/portfolio/case4.png'); background-size: cover; background-position: center;">
+                                        <div class="portfolio-item-overlay">
+                                            <span class="portfolio-category">广告行业</span>
+                                            <h3>图文的喷绘与写真<h3>
+                                            <div class="portfolio-tools">
+                                                <span>写真与车贴</span>
+                                                <span>精制化名片</span>
+                                                <span>单据与凭证</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 自定义轮播箭头 -->
+                <div class="portfolio-arrows">
+                    <button class="portfolio-arrow portfolio-arrow-prev" aria-label="上一个案例">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="portfolio-arrow portfolio-arrow-next" aria-label="下一个案例">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 服务关键词滚动条 ==================== -->
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>图文印刷</span><i class="fas fa-plus"></i>
+                <span>标签打印</span><i class="fas fa-plus"></i>
+                <span>名片定制</span><i class="fas fa-plus"></i>
+                <span>画册设计</span><i class="fas fa-plus"></i>
+                <span>包装印刷</span><i class="fas fa-plus"></i>
+                <span>丝网印刷</span><i class="fas fa-plus"></i>
+                <span>洗唛印制</span><i class="fas fa-plus"></i>
+                <span>电脑选购</span><i class="fas fa-plus"></i>
+                <span>电脑耗材</span><i class="fas fa-plus"></i>
+                <span>安装维修</span><i class="fas fa-plus"></i>
+                <span>打印机</span><i class="fas fa-plus"></i>
+                <span>复印机</span><i class="fas fa-plus"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 客户评价 ==================== -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <div class="section-star"><i class="fas fa-star"></i></div>
+                    <h2 class="section-title">客户评价 <span class="text-accent">见证品质</span></h2>
+                    <p class="section-subtitle">这些真实的反馈，来自一路支持我的客户朋友。</p>
+                </div>
+            </div>
+
+            <div class="testimonials-slider-wrap">
+                <div class="splide" id="testimonials-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <!-- 评价 1 -->
+                            <li class="splide__slide">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>5.0</span>
+                                    </div>
+                                    <p class="testimonial-text">iDarin 做的画册质量超出预期，色彩还原很准，纸张手感也很好。交货准时，沟通顺畅，已经合作很多次了。</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar" style="background-color: #10B981;">张</div>
+                                        <div class="author-info">
+                                            <h4>张经理</h4>
+                                            <p>某电气有限公司</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 评价 2 -->
+                            <li class="splide__slide">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>5.0</span>
+                                    </div>
+                                    <p class="testimonial-text">我们品牌的标签对防水和粘性要求很高，iDarin 不仅材料选得好，设计也很符合品牌调性，推荐给做产品的朋友。</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar" style="background-color: #3B82F6;">李</div>
+                                        <div class="author-info">
+                                            <h4>李经理</h4>
+                                            <p>某护理用品公司</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 评价 3 -->
+                            <li class="splide__slide">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>5.0</span>
+                                    </div>
+                                    <p class="testimonial-text">电脑、打印机、网络，不管硬件还是软件故障能很快的解决，后续会一直合作。</p>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar" style="background-color: #8B5CF6;">王</div>
+                                        <div class="author-info">
+                                            <h4>王先生</h4>
+                                            <p>某集团设备部负责人</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="testimonials-arrows">
+                    <button class="testimonials-arrow testimonials-arrow-prev" aria-label="上一条评价">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="testimonials-arrow testimonials-arrow-next" aria-label="下一条评价">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 博客 ==================== -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-md-8">
+                    <h2 class="section-title">印刷知识 <span class="text-accent">博客</span></h2>
+                    <p class="section-subtitle">分享印刷与设计中实用的经验与技巧。</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="link-accent">查看全部文章 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- 博客 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                            <span class="blog-category">印刷知识</span>
+                        </div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 2026.06.15</span>
+                                <span><i class="far fa-clock"></i> 5 分钟</span>
+                            </div>
+                            <h3><a href="#">如何选择合适的印刷纸张？</a></h3>
+                            <p>铜版纸、哑粉纸、特种纸各有特点，了解它们的适用场景，能让你的印刷品效果更上一层楼。</p>
+                            <a href="#" class="blog-read">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 博客 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);">
+                            <span class="blog-category">标签知识</span>
+                        </div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 2026.06.10</span>
+                                <span><i class="far fa-clock"></i> 4 分钟</span>
+                            </div>
+                            <h3><a href="#">标签打印中常见的5个问题</a></h3>
+                            <p>粘性不够、翘边、模糊……标签打印常见问题的原因和解决办法，一文讲清楚。</p>
+                            <a href="#" class="blog-read">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 博客 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="blog-card">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">
+                            <span class="blog-category">设计技巧</span>
+                        </div>
+                        <div class="blog-body">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> 2026.06.05</span>
+                                <span><i class="far fa-clock"></i> 6 分钟</span>
+                            </div>
+                            <h3><a href="#">品牌色彩搭配的实用技巧</a></h3>
+                            <p>从品牌定位到印刷落地的色彩一致性，分享几个品牌设计师常用的配色思路。</p>
+                            <a href="#" class="blog-read">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 联系方式 ==================== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <span class="contact-label">联系合作</span>
+                        <h2 class="section-title">有项目想法？<br><span class="text-accent">让我们聊聊</span></h2>
+                        <p class="section-desc">无论是名片画册、标签打印，还是品牌包装设计，我都乐意先听你讲讲需求。</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method-body">
+                                    <h4>邮箱</h4>
+                                    <p>1360935038@QQ.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i class="fas fa-phone-alt"></i></div>
+                                <div class="contact-method-body">
+                                    <h4>电话</h4>
+                                    <p>188 5287 5966</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="contact-method-body">
+                                    <h4>地址</h4>
+                                    <p>江苏省扬中市油坊镇</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <a href="images/QRcode.jpg" target="_blank" aria-label="微信二维码"><i class="fab fa-weixin"></i></a>
+                            <a href="https://wpa.qq.com/msgrd?v=3&uin=1360935038&site=qq&menu=yes" target="_blank" aria-label="QQ联系"><i class="fab fa-qq"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form-wrap">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="contactName" placeholder="您的称呼" required>
+                                <label for="contactName">您的称呼</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="contactEmail" placeholder="您的邮箱" required>
+                                <label for="contactEmail">您的邮箱</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="contactService">
+                                    <option value="printing">图文印刷</option>
+                                    <option value="label">标签打印</option>
+                                    <option value="design">创意设计</option>
+                                    <option value="other">其他需求</option>
+                                </select>
+                                <label for="contactService">咨询业务</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <textarea class="form-control" id="contactMessage" placeholder="项目描述" style="height: 120px" required></textarea>
+                                <label for="contactMessage">项目描述</label>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <span>发送消息</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-brand">
+                        <a href="#home"><span class="brand-icon">i</span> iDarin</a>
+                    </div>
+                    <p class="footer-desc">专注图文印刷、标签打印与创意设计，用心做好每一份印刷品。</p>
+                    <div class="footer-social">
+                        <a href="images/QRcode.png" target="_blank" aria-label="微信二维码"><i class="fab fa-weixin"></i></a>
+                        <a href="https://wpa.qq.com/msgrd?v=3&uin=1360935038&site=qq&menu=yes" target="_blank" aria-label="QQ联系"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h4 class="footer-title">导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#services">业务服务</a></li>
+                        <li><a href="#portfolio">作品案例</a></li>
+                        <li><a href="#blog">博客</a></li>
+                        <li><a href="#contact">联系合作</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h4 class="footer-title">服务</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">图文印刷</a></li>
+                        <li><a href="#services">标签打印</a></li>
+                        <li><a href="#services">创意设计</a></li>
+                        <li><a href="#services">包装印刷</a></li>
+                        <li><a href="#services">名片定制</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">联系方式</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> 1360935038@QQ.com</li>
+                        <li><i class="fas fa-phone-alt"></i> 188 5287 5966</li>
+                        <li><i class="fas fa-map-marker-alt"></i>江苏省扬中市</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2026 iDarin. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">隐私政策</a>
+                            <a href="#">服务条款</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 返回顶部 ==================== -->
+    <a href="#" id="back-to-top" class="back-to-top" aria-label="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- 脚本 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/splidejs/4.1.4/js/splide.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
