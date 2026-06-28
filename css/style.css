@@ -583,7 +583,7 @@ html[data-theme="dark"] .theme-toggle-icon.light {
 }
 
 .hero-stars {
-    color: var(--color-primary);
+    color: #EF4444;
     font-size: 1.2rem;
     margin-bottom: 16px;
 }
@@ -1108,7 +1108,7 @@ html[data-theme="dark"] .theme-toggle-icon.light {
 }
 
 .section-star {
-    color: var(--color-primary-light);
+    color: #EF4444;
     font-size: 2rem;
     margin-bottom: 12px;
 }
@@ -1137,7 +1137,7 @@ html[data-theme="dark"] .theme-toggle-icon.light {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: var(--color-primary-light);
+    color: #EF4444;
     margin-bottom: 16px;
 }
 
@@ -1643,6 +1643,40 @@ html[data-theme="dark"] .theme-toggle-icon.light {
     transform: translateY(-4px);
 }
 
+/* ==================== 博客开发中提示 ==================== */
+.blog-toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--bg-card);
+    color: var(--text-heading);
+    padding: 16px 28px;
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.blog-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.blog-toast i {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
 /* ==================== 响应式适配 ==================== */
 @media (max-width: 1199px) {
     .nav-menu {
@@ -1742,7 +1776,9 @@ html[data-theme="dark"] .theme-toggle-icon.light {
         font-size: 1.1rem;
     }
     .hero-portrait {
+        display: block;
         max-width: 280px;
+        margin: 0 auto;
     }
     .section-title {
         font-size: 1.8rem;
@@ -1800,7 +1836,9 @@ html[data-theme="dark"] .theme-toggle-icon.light {
         margin-bottom: -20px;
     }
     .hero-portrait {
+        display: block;
         max-width: 240px;
+        margin: 0 auto;
     }
     .about-stat h3 {
         font-size: 1.8rem;
