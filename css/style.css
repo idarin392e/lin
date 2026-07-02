@@ -1595,6 +1595,12 @@ html[data-theme="dark"] .theme-toggle-icon.light {
     margin: 0;
 }
 
+.footer-keywords {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    margin: 6px 0 0;
+}
+
 .footer-bottom-links {
     display: flex;
     justify-content: flex-end;
@@ -1675,6 +1681,102 @@ html[data-theme="dark"] .theme-toggle-icon.light {
 .blog-toast i {
     color: var(--color-primary);
     font-size: 1.1rem;
+}
+
+/* ==================== 常见问题 FAQ ==================== */
+.faq {
+    padding: 100px 0;
+    background: var(--bg-muted);
+    transition: background-color 0.3s ease;
+}
+
+.faq .section-star {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item[open] {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow);
+}
+
+.faq-item summary {
+    padding: 20px 24px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-item summary:hover {
+    color: var(--color-primary);
+}
+
+.faq-answer {
+    padding: 0 24px 20px;
+    animation: faqOpen 0.3s ease;
+}
+
+.faq-answer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.faq-answer strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+@keyframes faqOpen {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==================== 响应式适配 ==================== */
@@ -1787,7 +1889,7 @@ html[data-theme="dark"] .theme-toggle-icon.light {
         padding: 60px 0;
         margin: 0 12px;
     }
-    .experience, .about, .portfolio, .testimonials, .blog, .contact {
+    .experience, .about, .portfolio, .testimonials, .blog, .faq, .contact {
         padding: 60px 0;
     }
     .about-wrapper {
