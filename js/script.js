@@ -12,11 +12,24 @@
     }
 
     // ==================== 页面预加载 ====================
+    // 不再等 window load（图片全下完才触发），改用 DOMContentLoaded + 短延迟
+    // 加 3 秒兜底：即使意外出错，3 秒后也强制隐藏 preloader
+    function hidePreloader() {
+        document.body.classList.add('loaded');
+    }
+    // 兜底：最长 3 秒后必定隐藏
+    var preloaderFallback = setTimeout(hidePreloader, 3000);
+    // 正常路径：HTML 解析完即可隐藏，不等图片
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(hidePreloader, 200);
+        });
+    } else {
+        setTimeout(hidePreloader, 200);
+    }
+    // 如果 load 事件先到了，清除兜底定时器
     window.addEventListener('load', function() {
-        // 短暂延迟，让加载动画可见
-        setTimeout(function() {
-            document.body.classList.add('loaded');
-        }, 600);
+        clearTimeout(preloaderFallback);
     });
 
     // ==================== 主题切换 ====================

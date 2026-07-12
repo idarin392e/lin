@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持中心 - 打印机/电脑故障解决方案</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔧</span>
+                <span class="logo-text">技术支持中心</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">首页</a>
+                <a href="https://www.idarin.cn" class="nav-link">关于我</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link active">首页</a>
+        <a href="https://www.idarin.cn" class="mobile-nav-link">关于我</a>
+    </div>
+
+    <!-- 搜索区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">遇到问题了？来这里找答案</h1>
+            <p class="hero-subtitle">收录打印机、电脑常见故障及解决方案</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="输入关键词搜索问题..." class="search-input" oninput="doSearch()">
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类标签 -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="categories" id="categories">
+                <span class="category-tag active" onclick="filterCategory('all', this)">📋 全部</span>
+                <span class="category-tag" onclick="filterCategory('printer', this)">🖨️ 打印机故障</span>
+                <span class="category-tag" onclick="filterCategory('computer', this)">💻 电脑故障</span>
+                <span class="category-tag" onclick="filterCategory('network', this)">🌐 网络问题</span>
+                <span class="category-tag" onclick="filterCategory('software', this)">📦 软件问题</span>
+                <span class="category-tag" onclick="filterCategory('other', this)">🔩 其他问题</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 文章列表 ==================== -->
+    <!-- 
+        添加新文章：复制一整段 <details> ... </details>，修改标题、日期、分类和内容即可
+        分类可选值：printer / computer / network / software / other
+    -->
+
+    <section class="articles-section">
+        <div class="container">
+            <h2 class="articles-title">全部问题 <span id="articleCount" class="article-count"></span></h2>
+            <div class="faq-list">
+
+                <!-- ===== 打印机类 ===== -->
+
+                <!-- 文章 1 -->
+                <details class="faq-item" data-category="printer" data-tags="脱机 连接 驱动" data-date="2026-06-15">
+                    <summary>
+                        <span class="faq-cat">🖨️ 打印机故障</span>
+                        <span class="faq-title">打印机无法打印，显示"脱机"状态怎么办？</span>
+                        <span class="faq-date">2026-06-15</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>打印机在电脑上显示"脱机"状态，发送打印任务后没有反应。</p>
+
+                        <h3>解决方法（按顺序尝试）</h3>
+
+                        <p><strong>方法一：取消"脱机使用打印机"</strong></p>
+                        <p class="step">1. 打开电脑的<strong>控制面板</strong> → <strong>设备和打印机</strong></p>
+                        <p class="step">2. 右键点击你的打印机图标</p>
+                        <p class="step">3. 查看是否勾选了<strong>"脱机使用打印机"</strong>，如果勾选了，<strong>取消勾选</strong></p>
+                        <p class="step">4. 如果菜单里有<strong>"暂停打印"</strong>，也一并取消</p>
+
+                        <p><strong>方法二：重启打印服务</strong></p>
+                        <p class="step">1. 在电脑搜索栏输入 <strong>services.msc</strong> 并打开</p>
+                        <p class="step">2. 找到 <strong>Print Spooler</strong> 服务</p>
+                        <p class="step">3. 右键选择<strong>重新启动</strong></p>
+                        <p class="step">4. 重新打开打印机，尝试打印</p>
+
+                        <p><strong>方法三：检查连接线/USB口</strong></p>
+                        <p class="step">1. 拔掉打印机的 USB 线，等待 10 秒</p>
+                        <p class="step">2. 换一个 USB 接口重新插入</p>
+                        <p class="step">3. 听到电脑"叮咚"的识别声后，再尝试打印</p>
+
+                        <p class="warning">⚠ 如果以上方法都无效，可能是打印机驱动损坏，需要重新安装驱动。</p>
+                    </div>
+                </details>
+
+                <!-- 文章 2 -->
+                <details class="faq-item" data-category="printer" data-tags="横线 白条 喷头 墨盒" data-date="2026-06-20">
+                    <summary>
+                        <span class="faq-cat">🖨️ 打印机故障</span>
+                        <span class="faq-title">打印机打印出来有横线或白条</span>
+                        <span class="faq-date">2026-06-20</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>打印出来的纸张上有明显的横向线条、白条或颜色不均匀。</p>
+
+                        <h3>解决方法</h3>
+
+                        <p><strong>喷墨打印机：</strong></p>
+                        <p class="step">1. 打开打印机属性，找到<strong>维护</strong>或<strong>工具</strong>选项</p>
+                        <p class="step">2. 执行<strong>打印头清洗</strong>（可能需要 2-3 次）</p>
+                        <p class="step">3. 清洗后执行<strong>喷嘴检查</strong>，打印测试页查看效果</p>
+                        <p class="step">4. 如果仍不行，取出墨盒，用干净的湿纸巾轻轻擦拭喷头触点</p>
+
+                        <p><strong>激光打印机：</strong></p>
+                        <p class="step">1. 取出硒鼓，轻轻左右摇晃几次（让碳粉均匀分布）</p>
+                        <p class="step">2. 检查硒鼓表面是否有划痕或损坏</p>
+                        <p class="step">3. 如果硒鼓寿命已到（一般打印 2000-3000 页），需要更换新硒鼓</p>
+
+                        <p class="warning">⚠ 注意：处理硒鼓时避免直接用手触碰感光鼓表面。</p>
+                    </div>
+                </details>
+
+                <!-- 文章 3 -->
+                <details class="faq-item" data-category="printer" data-tags="卡纸 进纸 纸张" data-date="2026-07-01">
+                    <summary>
+                        <span class="faq-cat">🖨️ 打印机故障</span>
+                        <span class="faq-title">打印机卡纸了怎么处理？</span>
+                        <span class="faq-date">2026-07-01</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>打印机停止工作，面板上闪烁红灯或显示"卡纸"提示。</p>
+
+                        <h3>正确处理方法</h3>
+                        <p class="step">1. <strong>先关闭打印机电源</strong>（重要！带电操作可能损坏机器）</p>
+                        <p class="step">2. 打开打印机的前盖和/或后盖</p>
+                        <p class="step">3. <strong>顺着出纸方向</strong>轻轻拉出纸张，不要逆向拉扯</p>
+                        <p class="step">4. 如果纸张撕裂，务必将所有碎片清理干净</p>
+                        <p class="step">5. 检查纸道内是否有异物（回形针、订书钉等）</p>
+                        <p class="step">6. 重新装好纸张（不要超过纸盘容量，纸张要整齐）</p>
+                        <p class="step">7. 开机测试打印</p>
+
+                        <p class="warning">⚠ 切忌：不要用蛮力拉扯卡住的纸张！如果看不到纸头，建议拆机或联系技术人员。</p>
+
+                        <h3>预防卡纸的小技巧</h3>
+                        <ul>
+                            <li>纸张存放要干燥，受潮的纸容易卡</li>
+                            <li>装纸前把纸抖松，避免纸张粘连</li>
+                            <li>不要混用不同厚度/尺寸的纸张</li>
+                            <li>定期清理打印机内部的纸屑和灰尘</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- 文章 4 -->
+                <details class="faq-item" data-category="printer" data-tags="墨盒 不兼容 触点" data-date="2026-07-05">
+                    <summary>
+                        <span class="faq-cat">🖨️ 打印机故障</span>
+                        <span class="faq-title">打印机提示"墨盒不兼容"或"无法识别墨盒"</span>
+                        <span class="faq-date">2026-07-05</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>更换新墨盒后，打印机屏幕提示"墨盒不兼容"、"无法识别墨盒"或墨盒灯闪烁。</p>
+
+                        <h3>解决方法</h3>
+                        <p class="step">1. <strong>确认墨盒型号</strong>：检查墨盒包装上的型号是否与打印机匹配</p>
+                        <p class="step">2. <strong>撕掉保护膜</strong>：新墨盒底部通常有黄色/橙色的保护膜，必须撕掉</p>
+                        <p class="step">3. <strong>清洁触点</strong>：用干净的棉签蘸少量酒精，轻轻擦拭墨盒背面的金属触点</p>
+                        <p class="step">4. 同样清洁打印机内部的墨盒触点</p>
+                        <p class="step">5. 重新安装墨盒，确保听到"咔嗒"一声卡到位</p>
+                        <p class="step">6. 重启打印机</p>
+
+                        <p class="warning">⚠ 如果以上步骤都无效，可能是墨盒本身有质量问题，建议联系购买处退换。</p>
+                    </div>
+                </details>
+
+                <!-- ===== 电脑类 ===== -->
+
+                <!-- 文章 5 -->
+                <details class="faq-item" data-category="computer" data-tags="蓝屏 开机 Windows" data-date="2026-06-10">
+                    <summary>
+                        <span class="faq-cat">💻 电脑故障</span>
+                        <span class="faq-title">电脑开机后蓝屏怎么办？</span>
+                        <span class="faq-date">2026-06-10</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>电脑开机后出现蓝色背景的错误提示页面，无法正常进入系统。</p>
+
+                        <h3>解决步骤</h3>
+                        <p class="step">1. <strong>记录错误代码</strong>：蓝屏底部通常有一串代码（如 0x0000007B），拍照记录下来</p>
+                        <p class="step">2. <strong>重启电脑</strong>：有时只是一次偶发故障，重启即可</p>
+                        <p class="step">3. <strong>进入安全模式</strong>：开机时反复按 F8（或 Shift+F8），选择"安全模式"</p>
+                        <p class="step">4. 在安全模式下，卸载最近安装的软件或驱动</p>
+                        <p class="step">5. 打开命令提示符（管理员），运行：<code>sfc /scannow</code> 修复系统文件</p>
+                        <p class="step">6. 如果以上无效，考虑<strong>系统还原</strong>或<strong>重装系统</strong></p>
+
+                        <p class="warning">⚠ 如果蓝屏频繁出现且代码指向硬件（如 MEMORY_MANAGEMENT），可能是内存条故障，建议送修检测。</p>
+                    </div>
+                </details>
+
+                <!-- 文章 6 -->
+                <details class="faq-item" data-category="computer" data-tags="卡顿 慢 优化 清理" data-date="2026-06-25">
+                    <summary>
+                        <span class="faq-cat">💻 电脑故障</span>
+                        <span class="faq-title">电脑运行很慢、卡顿严重怎么优化？</span>
+                        <span class="faq-date">2026-06-25</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>常见原因</h3>
+                        <ul>
+                            <li>开机启动项太多</li>
+                            <li>C 盘空间不足</li>
+                            <li>后台程序占用过高</li>
+                            <li>电脑中病毒或恶意软件</li>
+                        </ul>
+
+                        <h3>优化方法</h3>
+
+                        <p><strong>1. 清理开机启动项</strong></p>
+                        <p class="step">按 Ctrl+Shift+Esc 打开任务管理器 → 切换到"启动"标签 → 禁用不必要的启动项</p>
+
+                        <p><strong>2. 清理磁盘空间</strong></p>
+                        <p class="step">打开"此电脑" → 右键 C 盘 → 属性 → 磁盘清理 → 清理系统文件</p>
+                        <p class="step">建议 C 盘保留至少 20GB 以上可用空间</p>
+
+                        <p><strong>3. 卸载不用的软件</strong></p>
+                        <p class="step">控制面板 → 程序和功能 → 卸载长期不用的软件</p>
+
+                        <p><strong>4. 查杀病毒</strong></p>
+                        <p class="step">使用火绒、360 等安全软件全盘扫描</p>
+
+                        <p class="warning">⚠ 如果电脑配置本身太低（如内存低于 4GB），建议升级硬件（加内存、换固态硬盘）效果最明显。</p>
+                    </div>
+                </details>
+
+                <!-- ===== 网络类 ===== -->
+
+                <!-- 文章 7 -->
+                <details class="faq-item" data-category="network" data-tags="WiFi 无线 网络 连接" data-date="2026-07-03">
+                    <summary>
+                        <span class="faq-cat">🌐 网络问题</span>
+                        <span class="faq-title">电脑无法连接 WiFi 无线网络</span>
+                        <span class="faq-date">2026-07-03</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>故障现象</h3>
+                        <p>电脑右下角网络图标显示红叉，或能搜到 WiFi 但连接失败。</p>
+
+                        <h3>排查步骤</h3>
+                        <p class="step">1. <strong>检查 WiFi 开关</strong>：部分笔记本有物理 WiFi 开关或 Fn+功能键开关，确保已打开</p>
+                        <p class="step">2. <strong>检查飞行模式</strong>：确认飞行模式已关闭</p>
+                        <p class="step">3. <strong>重启路由器和电脑</strong>：拔掉路由器电源等 30 秒再插上</p>
+                        <p class="step">4. <strong>忘记网络重连</strong>：WiFi 列表 → 右键该网络 → 忘记 → 重新输入密码连接</p>
+                        <p class="step">5. <strong>更新网卡驱动</strong>：设备管理器 → 网络适配器 → 右键无线网卡 → 更新驱动</p>
+                        <p class="step">6. <strong>用手机热点测试</strong>：如果手机热点能连上，说明是路由器问题；如果也连不上，说明是电脑问题</p>
+
+                        <p class="warning">⚠ 如果网卡驱动显示黄色感叹号，说明驱动有问题，需要从官网下载对应驱动安装。</p>
+                    </div>
+                </details>
+
+                <!-- ===== 软件类 ===== -->
+
+                <!-- 文章 8 -->
+                <details class="faq-item" data-category="software" data-tags="Office Word Excel 文件损坏" data-date="2026-07-08">
+                    <summary>
+                        <span class="faq-cat">📦 软件问题</span>
+                        <span class="faq-title">Office 文档打不开，提示"文件已损坏"</span>
+                        <span class="faq-date">2026-07-08</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>解决方法</h3>
+
+                        <p><strong>Word 文档修复：</strong></p>
+                        <p class="step">1. 打开 Word → 文件 → 打开 → 浏览</p>
+                        <p class="step">2. 选中打不开的文件，点击"打开"按钮旁的下拉箭头</p>
+                        <p class="step">3. 选择<strong>"打开并修复"</strong></p>
+
+                        <p><strong>Excel 文档修复：</strong></p>
+                        <p class="step">1. 打开 Excel → 文件 → 打开 → 浏览</p>
+                        <p class="step">2. 同样选择"打开并修复"</p>
+                        <p class="step">3. 如果弹出对话框，选择<strong>"提取数据"</strong></p>
+
+                        <p><strong>使用 WPS 打开</strong></p>
+                        <p class="step">有时 WPS 的兼容性比 Office 更好，可以尝试用 WPS 打开再另存为新的 Office 文件。</p>
+
+                        <p class="warning">⚠ 重要文件建议定期备份！U 盘里的文件更容易损坏，建议在电脑硬盘上也存一份。</p>
+                    </div>
+                </details>
+
+                <!-- ===== 其他类 ===== -->
+
+                <!-- 文章 9 -->
+                <details class="faq-item" data-category="other" data-tags="U盘 不识别 USB" data-date="2026-07-10">
+                    <summary>
+                        <span class="faq-cat">🔩 其他问题</span>
+                        <span class="faq-title">U 盘插上后电脑不识别怎么办？</span>
+                        <span class="faq-date">2026-07-10</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>排查步骤</h3>
+                        <p class="step">1. <strong>换一个 USB 接口</strong>：先试试其他接口，排除单个接口故障</p>
+                        <p class="step">2. <strong>换一台电脑</strong>：确认是 U 盘问题还是电脑问题</p>
+                        <p class="step">3. <strong>检查设备管理器</strong>：右键"此电脑" → 管理 → 设备管理器 → 查看"通用串行总线控制器"是否有黄色感叹号</p>
+                        <p class="step">4. <strong>磁盘管理查看</strong>：右键"此电脑" → 管理 → 磁盘管理 → 看是否能找到 U 盘（可能没有盘符）</p>
+                        <p class="step">5. 如果在磁盘管理中能看到，右键给它<strong>分配盘符</strong></p>
+
+                        <p class="warning">⚠ 如果磁盘管理中完全看不到 U 盘，且换电脑也不识别，U 盘可能已经硬件损坏。如果数据重要，建议找专业数据恢复。</p>
+                    </div>
+                </details>
+
+                <!-- 文章 10 -->
+                <details class="faq-item" data-category="printer" data-tags="共享 局域网 多台电脑" data-date="2026-07-11">
+                    <summary>
+                        <span class="faq-cat">🖨️ 打印机故障</span>
+                        <span class="faq-title">打印机共享设置教程（多台电脑共用一台打印机）</span>
+                        <span class="faq-date">2026-07-11</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <h3>前提条件</h3>
+                        <p>所有电脑必须在<strong>同一个局域网</strong>内（连接同一个路由器）。</p>
+
+                        <h3>主机端设置（连接打印机的电脑）</h3>
+                        <p class="step">1. 控制面板 → 设备和打印机 → 右键打印机 → <strong>打印机属性</strong></p>
+                        <p class="step">2. 切换到<strong>"共享"</strong>标签 → 勾选<strong>"共享这台打印机"</strong></p>
+                        <p class="step">3. 设置一个简单的共享名（如 Printer）→ 确定</p>
+                        <p class="step">4. 控制面板 → 网络和共享中心 → 更改高级共享设置 → 启用<strong>网络发现</strong>和<strong>文件和打印机共享</strong></p>
+
+                        <h3>客户端设置（其他电脑）</h3>
+                        <p class="step">1. 按 Win+R 键，输入 <code>\\\\主机电脑名</code> 或 <code>\\\\主机IP地址</code></p>
+                        <p class="step">2. 找到共享的打印机，双击安装驱动</p>
+                        <p class="step">3. 安装完成后即可使用</p>
+
+                        <p class="warning">⚠ 所有电脑建议设置相同的<strong>工作组</strong>（通常是 WORKGROUP），可避免很多共享问题。</p>
+                    </div>
+                </details>
+
+            </div>
+            <div class="no-result" id="noResult" style="display:none;">
+                <p>😕 没有找到相关问题</p>
+                <p>试试其他关键词，或者联系我获取帮助</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>🔧 技术支持中心</h3>
+                    <p>专业解决打印机、电脑等设备故障问题</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系方式</h3>
+                    <p>📧 邮箱：1360935038@qq.com</p>
+                    <p>📞 电话：188 5287 5966</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 技术支持中心 | 让技术问题不再困扰你</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== 搜索 & 分类筛选 ==========
+        let currentCategory = "all";
+
+        function filterCategory(cat, el) {
+            currentCategory = cat;
+            // 切换标签样式
+            document.querySelectorAll(".category-tag").forEach(t => t.classList.remove("active"));
+            el.classList.add("active");
+            // 清空搜索
+            document.getElementById("searchInput").value = "";
+            applyFilters();
+        }
+
+        function doSearch() {
+            currentCategory = "all";
+            document.querySelectorAll(".category-tag").forEach(t => t.classList.remove("active"));
+            document.querySelector('.category-tag[onclick*="all"]').classList.add("active");
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+            const items = document.querySelectorAll(".faq-item");
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const cat = item.getAttribute("data-category");
+                const tags = (item.getAttribute("data-tags") || "").toLowerCase();
+                const title = item.querySelector(".faq-title").textContent.toLowerCase();
+
+                // 分类匹配
+                const catMatch = (currentCategory === "all" || cat === currentCategory);
+                // 搜索匹配
+                const searchMatch = (!keyword || title.includes(keyword) || tags.includes(keyword));
+
+                if (catMatch && searchMatch) {
+                    item.style.display = "";
+                    visibleCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // 更新数量
+            document.getElementById("articleCount").textContent = "共 " + visibleCount + " 篇";
+
+            // 无结果显示
+            document.getElementById("noResult").style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        // 移动端菜单
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            document.getElementById("mobileMenu").classList.toggle("active");
+        });
+
+        // 初始计数
+        document.addEventListener("DOMContentLoaded", () => {
+            const total = document.querySelectorAll(".faq-item").length;
+            document.getElementById("articleCount").textContent = "共 " + total + " 篇";
+        });
+    </script>
+</body>
+</html>
