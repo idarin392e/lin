@@ -271,20 +271,4 @@
         });
     }
 
-    // ==================== 博客"开发中"提示 ====================
-    const blogToast = document.getElementById('blog-toast');
-    let toastTimer = null;
-
-    document.querySelectorAll('.blog-coming-soon').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (toastTimer) clearTimeout(toastTimer);
-
-            blogToast.classList.add('show');
-            toastTimer = setTimeout(function() {
-                blogToast.classList.remove('show');
-            }, 2500);
-        });
-    });
-
 })();
